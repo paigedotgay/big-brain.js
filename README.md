@@ -2,7 +2,7 @@
 
 ### Ranges
 ```js
-const { range } = require('bigbrain.js');
+const { range } = require('big-brain.js');
 
 range(12);
 // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -27,7 +27,7 @@ for (let i of range(3)) {
 ### Random Integers (without having to write the function yourself each time)  
 *(I always forget how it goes :c)*
 ```js
-const { randInt } = require('bigbrain.js');
+const { randInt } = require('big-brain.js');
 
 randInt(100);
 // 40
@@ -53,7 +53,7 @@ ints.reduce((previous, current) => current += previous) / ints.length;
 
 ### Random choice from array
 ```js
-const { randChoice } = require('bigbrain.js');
+const { randChoice } = require('big-brain.js');
 
 const presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
 
@@ -64,7 +64,7 @@ randChoice(presidents);
 ### Shuffle arrays
 *(this doesn't mutate the array)*
 ```js
-const { shuffleArray } = require('bigbrain.js');
+const { shuffleArray } = require('big-brain.js');
 
 let presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
 

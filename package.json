@@ -1,19 +1,19 @@
 {
-  "name": "big-brain",
+  "name": "bigbrain.js",
   "version": "1.0.0",
-  "description": "Functions that every big-brain language already has.",
-  "main": "big-brain.js",
+  "description": "Functions that every big brain language already has.",
+  "main": "bigbrain.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qanazoga/smoothbrain.git"
+    "url": "git+https://github.com/qanazoga/bigbrainjs.git"
   },
   "author": "qanazoga",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/qanazoga/big-brain/issues"
+    "url": "https://github.com/qanazoga/bigbrainjs/issues"
   },
-  "homepage": "https://qanazoga.com/big-brain"
+  "homepage": "https://qanazoga.com/bigbrainjs"
 }

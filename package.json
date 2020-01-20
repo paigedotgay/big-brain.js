@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qanazoga/bigbrainjs.git"
+    "url": "git+https://github.com/qanazoga/bigbrain.js.git"
   },
   "author": "qanazoga",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/qanazoga/bigbrainjs/issues"
+    "url": "https://github.com/qanazoga/bigbrain.js/issues"
   },
-  "homepage": "https://qanazoga.com/bigbrainjs"
+  "homepage": "https://qanazoga.com/bigbrain.js/"
 }

@@ -2,7 +2,7 @@
 
 ### Ranges
 ```js
-const { range } = require('smoothbrain');
+const { range } = require('big-brain');
 
 range(12);
 // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
@@ -27,7 +27,7 @@ for (let i of range(3)) {
 ### Random Integers (without having to write the function yourself each time)  
 *(I always forget how it goes :c)*
 ```js
-const { randInt } = require('smoothbrain');
+const { randInt } = require('big-brain');
 
 randInt(100);
 // 40
@@ -53,6 +53,8 @@ ints.reduce((previous, current) => current += previous) / ints.length;
 
 ### Random choice from array
 ```js
+const { randChoice } = require('big-brain');
+
 const presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
 
 randChoice(presidents);
@@ -61,3 +63,23 @@ randChoice(presidents);
 
 ### Shuffle arrays
 *(this doesn't mutate the array)*
+```js
+const { shuffleArray } = require('big-brain');
+
+let presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
+
+shuffleArray(presidents);
+// ['James Monroe', 'George Washington', 'James Madison', 'John Adams', 'Thomas Jefferson']
+
+/**
+ * Note that the original array is still in order
+ */
+presidents
+// ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe']
+
+/**
+ * To permanently rearrange, reassign:
+ */
+presidents = shuffleArray(presidents);
+// ['James Monroe', 'Thomas Jefferson', 'George Washington', 'John Adams', 'James Madison']
+```

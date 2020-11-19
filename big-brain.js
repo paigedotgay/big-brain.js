@@ -1,23 +1,32 @@
 /**
  * Returns a random int [min, max).
- * @param  {...Number} args min (optional, defaults to 0), max
+ * if min is the only arument provided then max wil default to the value given to min, and min will default to 0.
+ * @param {Number} min Inclusive minimum choice.
+ * @param {Number} max Exclusive maximum choice.
  */
-function randInt(...args) {
-	const max = (args[1]) ? args[1] : args[0];
-	const min = (args[1]) ? args[0] : 0;
-	return Math.floor(Math.random() * (max - min)) + min;
+function randInt(min, max=null) {
+	const adjMax = (max) ? max : min;
+	const adjMin = (max) ? min : 0;
+	return Math.floor(Math.random() * (adjMax - adjMin)) + adjMin;
 }
 
 /**
- * Creates an Array range [min, max).
- * @param  {...Number} args min (optional, defaults to 0), max
+ * Generates a range. Functions like Python ranges, except step doesn't need to be negative for a negative range.
+ * If start is the only argument provided then stop will default to the value given to start, and start will default to 0.
+ * @param {Number} start Where to start the range.
+ * @param {Number} stop  Where to end the range.
+ * @param {Number} step How much to step by.
  */
-function range(...args) {
-	const max = Math.max(...args);
-	const min = (Math.min(...args) == max) ? 0 : Math.min(...args);
-	let arr = [...Array(Math.abs(max - min)).keys()].map(num => num += min);
-	if (args.length == 2 && args[0] == max) arr = arr.map(num => num += 1).reverse();
-	return arr;
+function* range(start=0, stop=null, step=1) {
+    if (step <= 0) throw SyntaxError('Step must be greater than 0')
+    if (stop == null) {
+      stop = start;
+      start = 0;
+    }
+    const length = Math.ceil(Math.abs((stop - start) / step));
+    for (let i = 0; i < length; i++) {
+      yield (start < stop) ? start + i * step: start - i * step;
+    }
 }
 
 /**

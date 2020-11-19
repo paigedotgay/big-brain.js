@@ -4,15 +4,6 @@
 ```js
 const { range } = require('big-brain.js');
 
-range(12);
-// [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-
-range(11, 18);
-// [ 11, 12, 13, 14, 15, 16, 17 ]
-
-range(10, 0);
-// [ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
-
 /**
  * Can be used to make loops
  */
@@ -22,6 +13,21 @@ for (let i of range(3)) {
 // hello from loop 0
 // hello from loop 1
 // hello from loop 2
+
+/**
+ * Ranges to Arrays
+ */
+Array.from(range(12));
+// [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+Array.from(range(11, 18));
+// [ 11, 12, 13, 14, 15, 16, 17 ]
+
+Array.from(range(10, 0));
+// [ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+
+Array.from(range(0, 20, 2));
+// [0,  2,  4,  6,  8, 10, 12, 14, 16, 18]
 ```
 
 ### Random Integers (without having to write the function yourself each time)  

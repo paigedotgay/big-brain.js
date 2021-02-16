@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>qanazoga</title>
-  
-  <!--Bootstrap 4 (leave as 1st stylesheet)-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  
-    <!--fa icons-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>paige's website</title>
+  <!--Bootstrap 5 (leave as 1st stylesheet)-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <!--Font Awesome-->
   <script src="https://kit.fontawesome.com/b8ef133f52.js" crossorigin="anonymous"></script>
 
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/colors.css">
+
   <!--highlight.js-->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/stackoverflow-dark.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+
+  <style>
+    pre {
+      padding: 2em 
+    }
+  </style>
 </head>
+<!--                                                                                                 
+ ,adPPYb,d8  ,adPPYYba,  8b,dPPYba,   ,adPPYYba,  888888888   ,adPPYba,    ,adPPYb,d8  ,adPPYYba,  
+a8"    `Y88  ""     `Y8  88P'   `"8a  ""     `Y8       a8P"  a8"     "8a  a8"    `Y88  ""     `Y8  
+8b       88  ,adPPPPP88  88       88  ,adPPPPP88    ,d8P'    8b       d8  8b       88  ,adPPPPP88  
+"8a    ,d88  88,    ,88  88       88  88,    ,88  ,d8"       "8a,   ,a8"  "8a,   ,d88  88,    ,88  
+ `"YbbdP'88  `"8bbdP"Y8  88       88  `"8bbdP"Y8  888888888   `"YbbdP"'    `"YbbdP"Y8  `"8bbdP"Y8  
+         88                                                                aa,    ,88              
+         88                                                                 "Y8bbdP"               
+
+         heroes don't need pants
+-->
 
 <body>
-  
-  <!--Put at the top of each body-->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
-    <a id="navbar-home" class="navbar-brand" href="../index.html">Home</a>
 
-    <!--Navbar buttons-->
-    <div class="collapse navbar-collapse" id="collapsible-navbar">
-		<ul class="navbar-nav ml-auto">
-		  <li class="nav-item">
-			<a class="nav-link" href="https://github.com/qanazoga">GitHub</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="mailto:qanazoga@gmail.com">Contact</a>
-		  </li>
-		</ul>
-	  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Home</a>
 
-    <!--Navbar hamburger button-->
-    <button id="hamburger-button" class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
-      data-target="#collapsible-navbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsableButtons"
+        aria-controls="collapsableButtons" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsableButtons">
+        <div class="navbar-nav">
+          <a class="nav-link" href="https://github.com/qanazoga"><i class="fab fa-github"></i> GitHub</a>
+          <a class="nav-link" href="https://twitter.com/qanazoga"><i class="fab fa-twitter"></i> Twitter</a>
+          <a class="nav-link" href="mailto:qanazoga@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </div>
   </nav>
   <!--/Put at the top of each body-->
 
@@ -49,119 +63,147 @@
     <h1>big-brain.js</h1>
     <h3>Functions that every big brain language already has.</h3>
 
-    <div id="shields">  
+    <div id="shields">
       <img alt="npm" src="https://img.shields.io/npm/v/big-brain.js?style=flat-square">
       <img alt="npm" src="https://img.shields.io/npm/dt/big-brain.js?style=flat-square">
     </div>
 
     <hr>
 
-    <div id="features">
-      <button type="button" data-toggle="collapse" data-target="#range" class="btn btn-dark btn-lg">Ranges</button>
-      <button type="button" data-toggle="collapse" data-target="#randInt" class="btn btn-dark btn-lg">Random Integers</button>
-      <button type="button" data-toggle="collapse" data-target="#randChoice" class="btn btn-dark btn-lg">Random choice from array</button>
-      <button type="button" data-toggle="collapse" data-target="#shuffleArray" class="btn btn-dark btn-lg">Shuffle Array</button>
-      
+    <button class="btn btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#range" aria-expanded="false">
+      Ranges
+    </button>
 
-      <div style="text-align: left;">
-        <div id="range" class="collapse" data-parent="#features">
-          <h2>Ranges</h2>
-          <pre><code class="js">
-            const { range } = require('big-brain.js');
+    <button class="btn btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#randInt" aria-expanded="false">
+      Random Integers
+    </button>
 
-            /**
-            * Can be used to make loops
-            */
-            for (let i of range(3)) {
-            console.log(`hello from loop ${i}`);
-            }
-            // hello from loop 0
-            // hello from loop 1
-            // hello from loop 2
+    <button class="btn btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#randChoice"
+      aria-expanded="false">
+      Random Choice from Array
+    </button>
 
-            /**
-            * Ranges to Arrays
-            */
-            Array.from(range(12));
-            // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+    <button class="btn btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#shuffleArray"
+      aria-expanded="false">
+      Shuffle Array
+    </button>
 
-            Array.from(range(11, 18));
-            // [ 11, 12, 13, 14, 15, 16, 17 ]
+    <div class="accordion" id="features" style="text-align: left;">
 
-            Array.from(range(10, 0));
-            // [ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+      <div class="accordion-item">
+        <div id="range" class="accordion-collapse collapse" data-bs-parent="#features">
+          <div class="accordion-body">
+            <h3>Ranges</h3>
+            <pre><code class="js">
+      const { range } = require('big-brain.js');
 
-            /**
-            * Unlike Python ranges, step is always a positive number
-            */
-            Array.from(range(0, 20, 2));
-            // [0,  2,  4,  6,  8, 10, 12, 14, 16, 18]
-          </code></pre>
+      /**
+       * Can be used to make loops
+       */
+      for (let i of range(3)) {
+        console.log(`hello from loop ${i}`);
+      }
+      // hello from loop 0
+      // hello from loop 1
+      // hello from loop 2
+
+      /**
+       * Ranges to Arrays
+       */
+      Array.from(range(12));
+      // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+      Array.from(range(11, 18));
+      // [ 11, 12, 13, 14, 15, 16, 17 ]
+
+      Array.from(range(10, 0));
+      // [ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+
+      /**
+       * Unlike Python ranges, step is always a positive number
+       */
+      Array.from(range(0, 20, 2));
+      // [0,  2,  4,  6,  8, 10, 12, 14, 16, 18]
+            </code></pre>
+          </div>
         </div>
-      
-        <div id="randInt" class="collapse" data-parent="#features">
-          <h2>Random Integers</h2>
-          <p>(without having to write the function yourself each time <i>(I always forget how it goes :c)</i>)</p>
-          <pre><code class="js">
-            const { randInt } = require('big-brain.js');
+      </div>
 
-            randInt(100);
-            // 40
+      <div class="accordion-item">
 
-            randInt(1, 5);
-            // 3
+        <div id="randInt" class="accordion-collapse collapse" data-bs-parent="#features">
+          <div class="accordion-body">
+            <h3>Random Integers</h3>
+            <p>(without having to write the function yourself each time <i>(I always forget how it goes :c)</i>)</p>
+            <pre><code class="js">
+      const { randInt } = require('big-brain.js');
 
-            /**
-            * Random enough for general purpose
-            */
-            let ints = [];
-            for (let i of range(10000000)) {
-            ints.push(randInt(1, 11));
-            }
+      randInt(100);
+      // 40
 
-            /**
-            * Should be 5.5
-            */
-            ints.reduce((previous, current) => current += previous) / ints.length;
-            // 5.5007626
-          </code></pre>
+      randInt(1, 5);
+      // 3
+
+      /**
+       * Random enough for general purpose
+       */
+      let ints = [];
+      for (let i of range(10000000)) {
+        ints.push(randInt(1, 11));
+      }
+
+      /**
+       * Should be 5.5
+       */
+      ints.reduce((previous, current) => current += previous) / ints.length;
+      // 5.5007626
+            </code></pre>
+          </div>
         </div>
+      </div>
 
-        <div id="randChoice" class="collapse" data-parent="#features">
-          <h2>Random choice from array</h2>
-          <pre><code class="js">
-            const { randChoice } = require('big-brain.js');
+      <div class="accordion-item">
+        <div id="randChoice" class="accordion-collapse collapse" data-bs-parent="#features">
+          <div class="accordion-body">
+            <h3>Random choice from array</h3>
+            <pre><code class="js">
+      const { randChoice } = require('big-brain.js');
 
-            const presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
+      const presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
 
-            randChoice(presidents);
-            // 'John Adams'
-          </code></pre>
+      randChoice(presidents);
+      // 'John Adams'
+            </code></pre>
+          </div>
         </div>
+      </div>
 
-        <div id="shuffleArray" class="collapse" data-parent="#features">
-          <h2>Shuffle arrays</h2>
-          <p><i>(this doesn't mutate the array)</i></p>
-          <pre><code>
-            const { shuffleArray } = require('big-brain.js');
+      <div class="accordion-item">
+        <div id="shuffleArray" class="accordion-collapse collapse" data-bs-parent="#features">
+          <div class="accordion-body">
+            <h3>Shuffle arrays</h3>
+            <p><i>(this doesn't mutate the array)</i></p>
+            <pre><code>
+      const { shuffleArray } = require('big-brain.js');
 
-            let presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
+      let presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
 
-            shuffleArray(presidents);
-            // ['James Monroe', 'George Washington', 'James Madison', 'John Adams', 'Thomas Jefferson']
+      shuffleArray(presidents);
+      // ['James Monroe', 'George Washington', 'James Madison', 'John Adams', 'Thomas Jefferson']
 
-            /**
-            * Note that the original array is still in order
-            */
-            presidents
-            // ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe']
+      /**
+       * Note that the original array is still in order
+       */
+      presidents
+      // ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe']
 
-            /**
-            * To permanently rearrange, reassign:
-            */
-            presidents = shuffleArray(presidents);
-            // ['James Monroe', 'Thomas Jefferson', 'George Washington', 'John Adams', 'James Madison']
-          </code></pre>
+      /**
+       * To permanently rearrange, reassign:
+       */
+      presidents = shuffleArray(presidents);
+      // ['James Monroe', 'Thomas Jefferson', 'George Washington', 'John Adams', 'James Madison']
+            </code></pre>
+          </div>
         </div>
       </div>
     </div>
@@ -169,19 +211,20 @@
     <hr>
 
     <div id="links">
-      <button type="button" onclick="location.href='https://github.com/qanazoga/big-brain.js'" class="btn btn-dark btn-lg"><i class="fab fa-github"></i></button>
-      <button type="button" onclick="location.href='https://npmjs.com/package/big-brain.js'" class="btn btn-dark btn-lg"><i class="fab fa-npm"></i></button>
+      <a href="https://github.com/qanazoga/big-brain.js" class="btn btn-lg"><i class="fab fa-github"></i> View on
+        GitHub</a>
+      <a href="https://npmjs.com/package/big-brain.js" class="btn btn-lg"><i class="fab fa-npm"></i> View on NPM</a>
     </div>
 
   </div>
 
-    <!--Bootstrap and JQuery (keep at end of body).-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-    <script src="js/master.js" type="text/javascript"></script>
+  <!--Bootstrap and JQuery (keep at end of body).-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/js/master.js" type="text/javascript"></script>
+  <!--Bootstrap 5 (keep at end of body).-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
 </body>
+
+</html>

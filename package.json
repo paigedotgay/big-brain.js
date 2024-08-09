@@ -1,6 +1,6 @@
 {
   "name": "big-brain.js",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Functions that every big brain language already has.",
   "main": "big-brain.js",
   "scripts": {

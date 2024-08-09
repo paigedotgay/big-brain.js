@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qanazoga/big-brain.js.git"
+    "url": "git+https://github.com/paigedotgay/big-brain.js.git"
   },
-  "author": "qanazoga",
+  "author": "paigedotgay",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/qanazoga/big-brain.js/issues"
+    "url": "https://github.com/paigedotgay/big-brain.js/issues"
   },
-  "homepage": "https://qanazoga.com/big-brain.js/"
+  "homepage": "https://paige.gay/big-brain.js/"
 }

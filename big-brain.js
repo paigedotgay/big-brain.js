@@ -92,4 +92,4 @@ function last(iter) {
   return arr[arr.length - 1];
 }
 
-module.exports = { randInt, range, randChoice, shuffleArray };x
+module.exports = { randInt, range, randChoice, shuffleArray };

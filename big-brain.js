@@ -50,4 +50,46 @@ function shuffleArray(array) {
 	return array;
 }
 
-module.exports = { randInt, range, randChoice, shuffleArray };
+/**
+ * Sets and generators can't use index notation, which is kinda annoying.
+ * The following functions should work on all iterables.
+ */
+
+/**
+ * Returns the first item from most iterables without mutation.
+ * @param {Iterable} iter 
+ */
+function first(iter) {
+  const [first] = iter;
+  return first
+}
+
+/**
+ * Returns the second item from most iterables without mutation.
+ * @param {Iterable} iter 
+ */
+function second(iter) {
+  const [_, second] = iter;
+  return second;
+}
+
+/**
+ * Returns all items after the first from most iterables without mutation.
+ * @param {Iterable} iter 
+ */
+function rest(iter) {
+  const [_, ...rest] = iter;
+  return rest;
+}
+
+/**
+ * Returns the last item from most iterables without mutation.
+ * Makes an array from the iterable to compensate generators.
+ * @param {Iterable} iter
+ */
+function last(iter) {
+  const arr = Array.from(iter);
+  return arr[arr.length - 1];
+}
+
+module.exports = { randInt, range, randChoice, shuffleArray };x

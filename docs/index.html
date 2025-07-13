@@ -21,7 +21,7 @@
 
   <style>
     pre {
-      padding: 2em 
+      padding: 2em
     }
   </style>
 </head>
@@ -40,7 +40,6 @@
       <div class="collapse navbar-collapse" id="collapsableButtons">
         <div class="navbar-nav">
           <a class="nav-link" href="https://github.com/paigedotgay"><i class="fab fa-github"></i> GitHub</a>
-          <a class="nav-link" href="https://twitter.com/paigedotgay"><i class="fab fa-twitter"></i> Twitter</a>
           <a class="nav-link" href="mailto:paige@paige.gay"><i class="fas fa-envelope"></i> Email</a>
         </div>
       </div>
@@ -78,6 +77,11 @@
       Shuffle Array
     </button>
 
+    <button class="btn btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#extractFromIterables"
+      aria-expanded="false">
+      Extract from Iterables
+    </button>
+
     <div class="accordion" id="features" style="text-align: left;">
 
       <div class="accordion-item">
@@ -85,35 +89,35 @@
           <div class="accordion-body">
             <h3>Ranges</h3>
             <pre><code class="js">
-      const { range } = require('big-brain.js');
+  import { range } from 'big-brain.js';
 
-      /**
-       * Can be used to make loops
-       */
-      for (let i of range(3)) {
-        console.log(`hello from loop ${i}`);
-      }
-      // hello from loop 0
-      // hello from loop 1
-      // hello from loop 2
+  /**
+    * Can be used to make loops
+    */
+  for (let i of range(3)) {
+    console.log(`hello from loop ${i}`);
+  }
+  // hello from loop 0
+  // hello from loop 1
+  // hello from loop 2
 
-      /**
-       * Ranges to Arrays
-       */
-      Array.from(range(12));
-      // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  /**
+    * Ranges to Arrays
+    */
+  Array.from(range(12));
+  // [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
-      Array.from(range(11, 18));
-      // [ 11, 12, 13, 14, 15, 16, 17 ]
+  Array.from(range(11, 18));
+  // [ 11, 12, 13, 14, 15, 16, 17 ]
 
-      Array.from(range(10, 0));
-      // [ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
+  Array.from(range(10, 0));
+  // [ 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 ]
 
-      /**
-       * Unlike Python ranges, step is always a positive number
-       */
-      Array.from(range(0, 20, 2));
-      // [0,  2,  4,  6,  8, 10, 12, 14, 16, 18]
+  /**
+    * Unlike Python ranges, step is always a positive number
+    */
+  Array.from(range(0, 20, 2));
+  // [0,  2,  4,  6,  8, 10, 12, 14, 16, 18]
             </code></pre>
           </div>
         </div>
@@ -126,27 +130,27 @@
             <h3>Random Integers</h3>
             <p>(without having to write the function yourself each time <i>(I always forget how it goes :c)</i>)</p>
             <pre><code class="js">
-      const { randInt } = require('big-brain.js');
+  import { randInt } from 'big-brain.js';
 
-      randInt(100);
-      // 40
+  randInt(100);
+  // 40
 
-      randInt(1, 5);
-      // 3
+  randInt(1, 5);
+  // 3
 
-      /**
-       * Random enough for general purpose
-       */
-      let ints = [];
-      for (let i of range(10000000)) {
-        ints.push(randInt(1, 11));
-      }
+  /**
+    * Random enough for general purpose
+    */
+  let ints = [];
+  for (let i of range(10000000)) {
+    ints.push(randInt(1, 11));
+  }
 
-      /**
-       * Should be 5.5
-       */
-      ints.reduce((previous, current) => current += previous) / ints.length;
-      // 5.5007626
+  /**
+    * Should be 5.5
+    */
+  ints.reduce((previous, current) => current += previous) / ints.length;
+  // 5.5007626
             </code></pre>
           </div>
         </div>
@@ -157,12 +161,12 @@
           <div class="accordion-body">
             <h3>Random choice from array</h3>
             <pre><code class="js">
-      const { randChoice } = require('big-brain.js');
+  import { randChoice } from 'big-brain.js';
 
-      const presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
+  const presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
 
-      randChoice(presidents);
-      // 'John Adams'
+  randChoice(presidents);
+  // 'John Adams'
             </code></pre>
           </div>
         </div>
@@ -173,25 +177,50 @@
           <div class="accordion-body">
             <h3>Shuffle arrays</h3>
             <p><i>(this doesn't mutate the array)</i></p>
-            <pre><code>
-      const { shuffleArray } = require('big-brain.js');
+            <pre><code class="js">
+  import { shuffleArray } from 'big-brain.js';
 
-      let presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
+  let presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
 
-      shuffleArray(presidents);
-      // ['James Monroe', 'George Washington', 'James Madison', 'John Adams', 'Thomas Jefferson']
+  shuffleArray(presidents);
+  // ['James Monroe', 'George Washington', 'James Madison', 'John Adams', 'Thomas Jefferson']
 
-      /**
-       * Note that the original array is still in order
-       */
-      presidents
-      // ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe']
+  /**
+    * Note that the original array is still in order
+    */
+  presidents
+  // ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe']
 
-      /**
-       * To permanently rearrange, reassign:
-       */
-      presidents = shuffleArray(presidents);
-      // ['James Monroe', 'Thomas Jefferson', 'George Washington', 'John Adams', 'James Madison']
+  /**
+    * To permanently rearrange, reassign:
+    */
+  presidents = shuffleArray(presidents);
+  // ['James Monroe', 'Thomas Jefferson', 'George Washington', 'John Adams', 'James Madison']
+            </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div id="extractFromIterables" class="accordion-collapse collapse" data-bs-parent="#features">
+          <div class="accordion-body">
+            <h3>Extract from Iterables</h3>
+            <pre><code class="js">
+  import { first, second, last, rest } from 'big-brain.js';
+
+  const natoPhoneticAlphabet = ['alpha', 'bravo', 'charlie', 'delta']
+
+  first(natoPhoneticAlphabet);
+  // 'alpha'
+
+  second(natoPhoneticAlphabet);
+  // 'bravo'
+
+  last(natoPhoneticAlphabet);
+  // 'delta'
+
+  rest(natoPhoneticAlphabet); 
+  // ['bravo', 'charlie', 'delta']
             </code></pre>
           </div>
         </div>

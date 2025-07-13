@@ -1,8 +1,8 @@
 # Functions that every big brain language already has.
 
-### Ranges
+## Ranges
 ```js
-const { range } = require('big-brain.js');
+import { range } from 'big-brain.js';
 
 /**
  * Can be used to make loops
@@ -30,10 +30,10 @@ Array.from(range(0, 20, 2));
 // [0,  2,  4,  6,  8, 10, 12, 14, 16, 18]
 ```
 
-### Random Integers (without having to write the function yourself each time)  
+## Random Integers (without having to write the function yourself each time)  
 *(I always forget how it goes :c)*
 ```js
-const { randInt } = require('big-brain.js');
+import { randInt } from 'big-brain.js';
 
 randInt(100);
 // 40
@@ -57,9 +57,9 @@ ints.reduce((previous, current) => current += previous) / ints.length;
 
 ```
 
-### Random choice from array
+## Random choice from array
 ```js
-const { randChoice } = require('big-brain.js');
+import { randChoice } from 'big-brain.js';
 
 const presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
 
@@ -67,10 +67,10 @@ randChoice(presidents);
 // 'John Adams'
 ```
 
-### Shuffle arrays
+## Shuffle arrays
 *(this doesn't mutate the array)*
 ```js
-const { shuffleArray } = require('big-brain.js');
+import { shuffleArray } from 'big-brain.js';
 
 let presidents = ['George Washington', 'John Adams', 'Thomas Jefferson', 'James Madison', 'James Monroe'];
 
@@ -88,4 +88,23 @@ presidents
  */
 presidents = shuffleArray(presidents);
 // ['James Monroe', 'Thomas Jefferson', 'George Washington', 'John Adams', 'James Madison']
+```
+
+## Extract from Iterables
+```js
+import { first, second, last, rest } from "big-brain.js";
+
+const natoPhoneticAlphabet = ['alpha', 'bravo', 'charlie', 'delta']
+
+first(natoPhoneticAlphabet);
+// 'alpha'
+
+second(natoPhoneticAlphabet);
+// 'bravo'
+
+last(natoPhoneticAlphabet);
+// 'delta'
+
+rest(natoPhoneticAlphabet); 
+// ['bravo', 'charlie', 'delta']
 ```
